@@ -233,5 +233,21 @@ export default defineGkdApp({
       rules:
         'TextView[text="账号安全提醒"] + TextView[text*="还在正常使用吗"] + LinearLayout > @TextView[text="正常使用中"][clickable=true]',
     },
+    {
+      key: 17,
+      name: '全屏广告-会员付费歌曲弹窗',
+      desc: '点击底部圆形关闭按钮',
+      rules: [
+        {
+          key: 0,
+          fastQuery: true,
+          activityIds: 'com.netease.cloudmusic.music.biz.rn.activity.LayerReactNativeActivity',
+          matches: [
+            '[text*="付费歌曲" || text*="开会员无限畅听"]',
+            '@ViewGroup[clickable=true][childCount=1] > ViewGroup[childCount=1] > ImageView[childCount=0][width<150 && height<150]',
+          ],
+        },
+      ],
+    },
   ],
 });
