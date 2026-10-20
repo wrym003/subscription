@@ -50,7 +50,3 @@
 ## 使用须知
 
 使用本项目前，请您务必仔细阅读并充分理解 [LEGAL.md](./LEGAL.md)，请在阅读完毕后再决定是否使用, 继续使用即表示您已完全接受所有条款理解并愿意自行承担相应风险与后果。
-
-## Star History
-
-[![Star History Chart](https://starhistory.link/aoguai/subscription.svg?theme=cyan)](https://starhistory.link/aoguai/subscription)
