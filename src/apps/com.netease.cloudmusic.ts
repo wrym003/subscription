@@ -206,12 +206,23 @@ export default defineGkdApp({
     },
     {
       key: 15,
-      name: '全屏广告-首页续费弹窗',
-      desc: '点击右上角关闭按钮',
+      name: '全屏广告-首页VIP弹窗',
+      desc: '关闭首页续费和领取VIP弹窗',
       fastQuery: true,
-      activityIds: '.music.biz.rn.activity.LayerReactNativeActivity',
-      rules:
-        'TextView[text^="VIP曾陪伴你"] + @ViewGroup[clickable=true] + TextView[text^="续费后，"]',
+      rules: [
+        {
+          key: 0,
+          activityIds: '.music.biz.rn.activity.LayerReactNativeActivity',
+          matches:
+            'TextView[text^="VIP曾陪伴你"] + @ViewGroup[clickable=true] + TextView[text^="续费后，"]',
+        },
+        {
+          key: 1,
+          activityIds: '.activity.MainActivity',
+          matches:
+            'TextView[text$="黑胶VIP已到账，听有声书即可领取"] + @ImageView[clickable=true]',
+        },
+      ],
     },
   ],
 });
