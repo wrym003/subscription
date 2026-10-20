@@ -1,6 +1,6 @@
-# @aoguai/subscription
+# 个人 GKD 订阅
 
-此仓库由 aoguai 维护，提供 GKD 第三方订阅规则。
+基于 [aoguai/subscription 的 custom 分支](https://github.com/aoguai/subscription/tree/custom)维护的个人版 GKD 订阅。感谢原作者及贡献者。
 
 ✨避免臃肿冗余耗电，提供更**全面**的订阅体验✨
 
@@ -8,11 +8,9 @@
 
 ⚠️ **使用本项目前，请务必仔细阅读并理解本项目的 [LICENSE](./LICENSE) 与 [LEGAL.md](./LEGAL.md)。继续使用即表示您已完全接受所有条款。**
 
-若您已阅读了解并同意 [LICENSE](./LICENSE) 与 [LEGAL.md](./LEGAL.md)，可将以下任意链接添加至 [GKD](https://github.com/gkd-kit/gkd) 内使用此规则：
+若您已阅读了解并同意 [LICENSE](./LICENSE) 与 [LEGAL.md](./LEGAL.md)，可将以下链接添加至 [GKD](https://github.com/gkd-kit/gkd)，或下载订阅文件离线导入：
 
-| GitHub 源（推荐）                                                                          | Release 离线订阅文件                                           | gitmirror 源                                                                       | jsDelivr 源                                                                          |
-| ------------------------------------------------------------------------------------------ | -------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| [复制](https://raw.githubusercontent.com/aoguai/subscription/custom/dist/aoguai_gkd.json5) | [下载](https://github.com/aoguai/subscription/releases/latest) | [复制](https://raw.gitmirror.com/aoguai/subscription/custom/dist/aoguai_gkd.json5) | [复制](https://cdn.jsdelivr.net/gh/aoguai/subscription@custom/dist/aoguai_gkd.json5) |
+[订阅链接](https://raw.githubusercontent.com/wrym003/subscription/custom/dist/aoguai_gkd.json5) · [下载订阅文件](./dist/aoguai_gkd.json5)
 
 **请注意：**
 
@@ -20,17 +18,13 @@
 
 ## 说明 📝
 
-当前版本: v89
+当前版本: v90
 
-当前订阅文件含 280 应用规则组， 9 全局规则组。
+当前订阅文件含 244 应用规则组， 9 全局规则组。
 
 **🔍 查看详细[适配规则列表](./dist/README.md)**
 
-**❗️ 此仓库仅接受[适配规则列表](./dist/README.md)内存在的 APP 与全局规则相关的维护或改进的 issues 或 PR 提交。**
-
-如果您需要任何额外的 APP 规则，您可以参考[官方语法介绍](https://gkd.li/guide/selector)并将其添加到**本地规则**中或执行搭建 [GKD 订阅模板](https://github.com/gkd-kit/subscription-template) 使用。
-
-如果您希望参与贡献此项目，请参阅 [CONTRIBUTING.md](./CONTRIBUTING.md)。
+如需继续增删应用规则，请修改 `src/apps/`，运行 `pnpm run check` 和 `pnpm run build`，并提交更新后的 `dist/` 文件。
 
 ## 相关 ⭐️
 

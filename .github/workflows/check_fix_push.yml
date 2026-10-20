@@ -1,11 +1,12 @@
-name: check_fix_push
+name: check_push
 
 on:
   push:
     branches:
       - '**'
 
-permissions: write-all
+permissions:
+  contents: read
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -13,8 +14,6 @@ env:
 jobs:
   check:
     runs-on: ubuntu-latest
-    if: |
-      ${{ github.event.head_commit.message!='chore(actions): check_format_lint' }}
     steps:
       - uses: actions/checkout@v7
 
@@ -25,26 +24,5 @@ jobs:
 
       - uses: pnpm/action-setup@v6
 
-      - run: pnpm install
-
+      - run: pnpm install --frozen-lockfile
       - run: pnpm run check
-
-      - run: pnpm run format
-
-      - run: pnpm run lint
-
-      - name: Git commit
-        id: commit
-        run: |
-          git config --local user.email github-actions[bot]@users.noreply.github.com
-          git config --local user.name github-actions[bot]
-          git status --porcelain
-          git --no-pager diff
-          git commit -a -m "chore(actions): check_format_lint"
-        continue-on-error: true
-
-      - name: Git push
-        uses: ad-m/github-push-action@v1
-        if: ${{ steps.commit.outcome == 'success' }}
-        with:
-          branch: ${{ github.ref }}

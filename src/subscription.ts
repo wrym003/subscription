@@ -19,12 +19,12 @@ apps.forEach((appConfig) => {
 });
 
 export default defineGkdSubscription({
-  id: 86,
-  name: '奥怪的GKD订阅',
+  id: 152133885,
+  name: '个人 GKD 订阅',
   version: 0,
-  author: 'aoguai',
-  checkUpdateUrl: './gkd.version.json5',
-  supportUri: 'https://github.com/aoguai/subscription/issues/new/choose',
+  author: 'wrym003',
+  checkUpdateUrl: './aoguai_gkd.version.json5',
+  supportUri: 'https://github.com/wrym003/subscription/issues',
   categories,
   globalGroups,
   apps: rawApps,
