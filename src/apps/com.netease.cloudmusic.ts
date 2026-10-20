@@ -249,5 +249,21 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 18,
+      name: '分段广告-免费听歌模式弹窗',
+      desc: '点击右上角关闭按钮',
+      rules: [
+        {
+          key: 0,
+          fastQuery: true,
+          activityIds: '.activity.MainActivity',
+          matches: [
+            '[text*="免费听" || text*="畅听"]',
+            '[vid="dsl_dialog_root"] > ViewGroup > ViewGroup > ViewGroup > @ImageView[clickable=true][width<150 && height<150]',
+          ],
+        },
+      ],
+    },
   ],
 });
