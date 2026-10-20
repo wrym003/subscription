@@ -224,5 +224,14 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 16,
+      name: '功能类-确认账号安全提醒',
+      desc: '点击账号安全提醒中的正常使用中',
+      fastQuery: true,
+      activityIds: '.activity.MainActivity',
+      rules:
+        'TextView[text="账号安全提醒"] + TextView[text*="还在正常使用吗"] + LinearLayout > @TextView[text="正常使用中"][clickable=true]',
+    },
   ],
 });
