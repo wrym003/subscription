@@ -12,5 +12,16 @@ export default defineGkdApp({
       activityIds: '.MainActivity',
       rules: 'View[desc="签到活动"] +n @ImageView[clickable=true][desc=null]',
     },
+    {
+      key: 1,
+      name: '全屏广告-首页会员弹窗',
+      desc: '关闭首页的连续包月会员推广弹窗',
+      fastQuery: true,
+      activityIds: '.MainActivity',
+      actionMaximum: 1,
+      resetMatch: 'app',
+      rules:
+        'View[desc*="开通连续包月会员"] +2 @ImageView[clickable=true][visibleToUser=true]',
+    },
   ],
 });
