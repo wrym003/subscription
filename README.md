@@ -14,7 +14,7 @@
 | --- | --- |
 | GitHub 源 | [订阅链接](https://raw.githubusercontent.com/wrym003/subscription/custom/dist/aoguai_gkd.json5) |
 | jsDelivr 源 | [订阅链接](https://cdn.jsdelivr.net/gh/wrym003/subscription@custom/dist/aoguai_gkd.json5) |
-| 国内 Fastly 源 | [订阅链接](https://fastly.jsdelivr.net/gh/wrym003/subscription@custom/dist/aoguai_gkd.json5) |
+| jsDelivr Fastly 源 | [订阅链接](https://fastly.jsdelivr.net/gh/wrym003/subscription@custom/dist/aoguai_gkd.json5) |
 | 离线文件 | [下载订阅文件](./dist/aoguai_gkd.json5) |
 
 任选一个在线来源添加到 GKD 即可，避免重复订阅。jsDelivr 链接可能因缓存而延迟更新。
@@ -27,9 +27,9 @@
 
 ## 说明 📝
 
-当前版本: v100
+当前版本: v101
 
-当前订阅文件含 253 应用规则组， 9 全局规则组。
+当前订阅文件含 261 应用规则组， 9 全局规则组。
 
 **🔍 查看详细[适配规则列表](./dist/README.md)**
 
@@ -51,3 +51,6 @@
 
 使用本项目前，请您务必仔细阅读并充分理解 [LEGAL.md](./LEGAL.md)，请在阅读完毕后再决定是否使用, 继续使用即表示您已完全接受所有条款理解并愿意自行承担相应风险与后果。
 
+## Star History
+
+[![Star History Chart](https://starhistory.link/aoguai/subscription.svg?theme=cyan)](https://starhistory.link/aoguai/subscription)
