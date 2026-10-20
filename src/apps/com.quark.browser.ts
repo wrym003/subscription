@@ -35,5 +35,25 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 1,
+      name: '全屏广告-网盘首页活动弹窗',
+      desc: '点击网盘首页活动弹窗下方的关闭按钮',
+      enable: false,
+      activityIds: 'com.ucpro.BrowserActivity',
+      actionMaximum: 1,
+      resetMatch: 'activity',
+      rules: {
+        action: 'clickCenter',
+        position: {
+          left: 'width * 0.5',
+          top: 'height * 0.731',
+        },
+        matches: [
+          'WebView[text="夸克-新生代智能搜索"] TextView[text="全部"] + TextView[text="图片"] + TextView[text="经验"]',
+          'FrameLayout[childCount=4] > FrameLayout[index=3][childCount=1] > FrameLayout[childCount=1] > ViewGroup[childCount=1] > FrameLayout[childCount=1] > FrameLayout[childCount=1] > @FrameLayout[childCount=0][focusable=true]',
+        ],
+      },
+    },
   ],
 });
