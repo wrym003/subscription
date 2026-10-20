@@ -176,6 +176,14 @@ export default defineGkdApp({
           matches: ['[text="继续逛"][clickable=true]'],
           snapshotUrls: 'https://i.gkd.li/i/15047243',
         },
+        {
+          key: 4,
+          name: '消息页通知红包弹窗',
+          activityIds: 'com.jingdong.app.mall.MainFrameActivity',
+          fastQuery: true,
+          matches:
+            'TextView[text="开启消息通知"] <<2 ViewGroup[childCount=6] > @Button[desc="关闭"][clickable=true][visibleToUser=true]',
+        },
       ],
     },
     {

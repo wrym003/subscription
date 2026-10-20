@@ -2,8 +2,36 @@ import { defineGkdApp } from '@gkd-kit/define';
 
 export default defineGkdApp({
   id: 'me.ele',
-  name: '饿了么',
+  name: '淘宝闪购',
   groups: [
+    {
+      key: 0,
+      name: '通知提示-开启消息通知弹窗',
+      desc: '点击消息通知权限引导右上角的关闭按钮',
+      fastQuery: true,
+      activityIds: 'me.ele.message.ui.PushMessageGuideActivity',
+      rules:
+        'TextView[vid="tv_title"][text="及时获取聊天消息"] <<2 ViewGroup[vid="frame_bottom_bg"] > @FrameLayout[vid="view_close"][clickable=true][visibleToUser=true]',
+    },
+    {
+      key: 1,
+      name: '全屏广告-红包活动弹窗',
+      desc: '点击红包活动弹窗的“开心收下”按钮。该弹窗无独立控件，按快照中的按钮位置点击',
+      enable: false,
+      actionMaximum: 1,
+      resetMatch: 'activity',
+      matchTime: 10000,
+      activityIds: 'me.ele.muise.page.WeexTransparentActivity',
+      rules: {
+        action: 'clickCenter',
+        position: {
+          left: 'width * 0.5',
+          top: 'height * 0.715',
+        },
+        matches:
+          'ViewGroup[vid="weex_common_page_fragment"] > FrameLayout[vid="weex_common_fragment_frame"] > RelativeLayout > FrameLayout[vid="render_container"] > FrameLayout > @FrameLayout[focusable=true][childCount=0][visibleToUser=true]',
+      },
+    },
     {
       key: 2,
       name: '全屏广告-红包弹窗',

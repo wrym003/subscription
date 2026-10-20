@@ -5,6 +5,17 @@ export default defineGkdApp({
   name: '淘宝',
   groups: [
     {
+      key: 0,
+      name: '开屏广告',
+      desc: '跳过启动或从后台切回时出现的广告',
+      fastQuery: true,
+      actionMaximum: 1,
+      resetMatch: 'activity',
+      activityIds: 'com.taobao.tao.welcome.Welcome',
+      rules:
+        '@LinearLayout[vid="ll_close"][clickable=true][visibleToUser=true] > TextView[vid="tv_close"][text="跳过"]',
+    },
+    {
       key: 1,
       name: '全屏广告-弹窗广告',
       desc: '关闭各种全屏弹窗广告，包括会员促销、活动邀请等',

@@ -17,9 +17,7 @@ export default defineGkdApp({
       name: '全屏广告-首页会员弹窗',
       desc: '关闭首页的连续包月会员推广弹窗',
       fastQuery: true,
-      activityIds: '.MainActivity',
-      actionMaximum: 1,
-      resetMatch: 'app',
+      activityIds: 'com.xiaofeiji.app.disk.MainActivity',
       rules:
         'View[desc*="开通连续包月会员"] +2 @ImageView[clickable=true][visibleToUser=true]',
     },
