@@ -204,5 +204,14 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 15,
+      name: '全屏广告-首页续费弹窗',
+      desc: '点击右上角关闭按钮',
+      fastQuery: true,
+      activityIds: '.music.biz.rn.activity.LayerReactNativeActivity',
+      rules:
+        'TextView[text^="VIP曾陪伴你"] + @ViewGroup[clickable=true] + TextView[text^="续费后，"]',
+    },
   ],
 });
