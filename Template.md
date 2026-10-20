@@ -10,7 +10,14 @@
 
 若您已阅读了解并同意 [LICENSE](./LICENSE) 与 [LEGAL.md](./LEGAL.md)，可将以下链接添加至 [GKD](https://github.com/gkd-kit/gkd)，或下载订阅文件离线导入：
 
-[订阅链接](https://raw.githubusercontent.com/wrym003/subscription/custom/dist/aoguai_gkd.json5) · [下载订阅文件](./dist/aoguai_gkd.json5)
+| 来源 | 链接 |
+| --- | --- |
+| GitHub 源 | [订阅链接](https://raw.githubusercontent.com/wrym003/subscription/custom/dist/aoguai_gkd.json5) |
+| jsDelivr 源 | [订阅链接](https://cdn.jsdelivr.net/gh/wrym003/subscription@custom/dist/aoguai_gkd.json5) |
+| jsDelivr Fastly 源 | [订阅链接](https://fastly.jsdelivr.net/gh/wrym003/subscription@custom/dist/aoguai_gkd.json5) |
+| 离线文件 | [下载订阅文件](./dist/aoguai_gkd.json5) |
+
+任选一个在线来源添加到 GKD 即可，避免重复订阅。jsDelivr 链接可能因缓存而延迟更新。
 
 第一次修改这个仓库？请看 [维护指南](./维护指南.md)。
 
