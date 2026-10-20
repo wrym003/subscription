@@ -12,6 +12,8 @@
 
 [订阅链接](https://raw.githubusercontent.com/wrym003/subscription/custom/dist/aoguai_gkd.json5) · [下载订阅文件](./dist/aoguai_gkd.json5)
 
+第一次修改这个仓库？请看 [维护指南](./维护指南.md)。
+
 **请注意：**
 
 - **本项目维护的规则仅默认启用 `启动页/开屏` 相关规则，其它所有规则均需使用者手动打开**
