@@ -236,16 +236,24 @@ export default defineGkdApp({
     {
       key: 17,
       name: '全屏广告-会员付费歌曲弹窗',
-      desc: '点击底部圆形关闭按钮',
+      desc: '关闭付费歌曲和看广告免费听 VIP 歌曲弹窗',
       rules: [
         {
           key: 0,
           fastQuery: true,
-          activityIds: 'com.netease.cloudmusic.music.biz.rn.activity.LayerReactNativeActivity',
+          activityIds:
+            'com.netease.cloudmusic.music.biz.rn.activity.LayerReactNativeActivity',
           matches: [
             '[text*="付费歌曲" || text*="开会员无限畅听"]',
             '@ViewGroup[clickable=true][childCount=1] > ViewGroup[childCount=1] > ImageView[childCount=0][width<150 && height<150]',
           ],
+        },
+        {
+          key: 1,
+          fastQuery: true,
+          activityIds: '.music.biz.rn.activity.LayerReactNativeActivity',
+          matches:
+            'TextView[text="看广告免费听VIP歌曲"] + @ViewGroup[clickable=true][visibleToUser=true][width<150][height<150]',
         },
       ],
     },
