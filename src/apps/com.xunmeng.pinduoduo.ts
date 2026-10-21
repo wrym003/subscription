@@ -154,6 +154,22 @@ export default defineGkdApp({
             'https://i.gkd.li/i/23256823',
           ],
         },
+        {
+          key: 13,
+          name: '多多买菜活动及退出挽留弹窗',
+          fastQuery: true,
+          activityIds: '.activity.NewPageActivity',
+          matches:
+            '@Button[text="关闭弹窗"][clickable=true][visibleToUser=true]',
+        },
+        {
+          key: 14,
+          name: '百亿补贴福袋活动弹窗',
+          action: 'clickCenter',
+          activityIds: '.activity.NewPageActivity',
+          matches:
+            '@Image[visibleToUser=true][width<120][height<120][left>900][top<900][childCount=0] < View[width>700][height>800][childCount=1] < View[childCount=1] < View[childCount=1]',
+        },
       ],
     },
     {

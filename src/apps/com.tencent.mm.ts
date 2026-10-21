@@ -537,6 +537,32 @@ export default defineGkdApp({
       ],
     },
     {
+      key: 24,
+      name: '全屏广告-京东购物小程序弹窗',
+      desc: '关闭京东购物小程序的外卖优惠券、点餐成功优惠券和我的页面推广弹窗',
+      enable: false,
+      activityIds: 'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
+      rules: [
+        {
+          key: 0,
+          name: '外卖优惠券及点餐成功弹窗',
+          action: 'clickCenter',
+          matches:
+            'View[desc="超级餐补券"] +n View[desc="开心收下"] +n @ImageView[visibleToUser=true][width>70][width<110][height>70][height<110][left>500][left<700]',
+        },
+        {
+          key: 1,
+          name: '我的页面推广弹窗',
+          action: 'clickCenter',
+          matches: [
+            'TextView[text="我的钱包"][visibleToUser=true]',
+            'TextView[text="京东E卡"][visibleToUser=true]',
+            'View[childCount=3] > Image[width>500] + @Image[visibleToUser=true][width<100][height<100] + TextView[text^="关闭"][visibleToUser=true]',
+          ],
+        },
+      ],
+    },
+    {
       key: 14,
       name: '分段广告-小程序-内部广告',
       enable: false,

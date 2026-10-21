@@ -7,7 +7,7 @@ export default defineGkdApp({
     {
       key: 1,
       name: '全屏广告-活动弹窗',
-      desc: '关闭VIP推广、一刻相册推广、幸运券包等活动弹窗',
+      desc: '关闭VIP推广、一刻相册推广、幸运券包、添加桌面等弹窗',
       enable: false,
       fastQuery: true,
       activityIds: [
@@ -33,6 +33,12 @@ export default defineGkdApp({
           matches:
             '@ImageView[id="com.baidu.netdisk:id/close_btn"] + ImageView[id="com.baidu.netdisk:id/bg_image"]',
           snapshotUrls: 'https://i.gkd.li/import/12648987',
+        },
+        {
+          key: 2,
+          name: '我的页面添加桌面弹窗',
+          matches:
+            '@View[vid="add_widget_dialog_close_container"][clickable=true][visibleToUser=true] + ImageView[vid="add_widget_dialog_close"] + TextView[vid="add_widget_dialog_main_title"][text="订阅与共享可以添加到桌面啦"]',
         },
       ],
     },
