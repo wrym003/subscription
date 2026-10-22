@@ -14,7 +14,7 @@
 | ------------------ | ----------------------------------------------------------------------------------------------- |
 | GitHub 源          | [订阅链接](https://raw.githubusercontent.com/wrym003/subscription/custom/dist/aoguai_gkd.json5) |
 | jsDelivr 源        | [订阅链接](https://cdn.jsdelivr.net/gh/wrym003/subscription@custom/dist/aoguai_gkd.json5)       |
-| jsDelivr Fastly 源 | [订阅链接](https://fastly.jsdelivr.net/gh/wrym003/subscription@custom/dist/aoguai_gkd.json5)    |
+| 国内 Fastly 源 | [订阅链接](https://fastly.jsdelivr.net/gh/wrym003/subscription@custom/dist/aoguai_gkd.json5)    |
 | 离线文件           | [下载订阅文件](./dist/aoguai_gkd.json5)                                                         |
 
 任选一个在线来源添加到 GKD 即可，避免重复订阅。jsDelivr 链接可能因缓存而延迟更新。
