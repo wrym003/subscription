@@ -186,6 +186,22 @@ export default defineGkdApp({
             'Image[text*=".jpg"][width<150 && height<150] < [visibleToUser=true] < @View[clickable=true][childCount=1] <<n FrameLayout[id=null] - [vid="layermanager_penetrate_webview_container_id"]',
           snapshotUrls: 'https://i.gkd.li/i/30710740',
         },
+        {
+          key: 16,
+          name: '闪购页面购物红包弹窗',
+          action: 'clickCenter',
+          actionMaximum: 1,
+          resetMatch: 'activity',
+          activityIds: 'com.taobao.tao.welcome.Welcome',
+          position: {
+            left: 'width * 0.5',
+            top: 'height * 0.728',
+          },
+          matches: [
+            'LinearLayout[desc="闪购,已选中"][visibleToUser=true]',
+            '@View[vid="poplayer_inner_view"][visibleToUser=true][width>1000][height>2000]',
+          ],
+        },
       ],
     },
     {

@@ -343,6 +343,24 @@ export default defineGkdApp({
           ],
         },
         {
+          key: 11,
+          name: '点击文章留言中的「广告」按钮',
+          action: 'clickCenter',
+          excludeMatches: '[text="感谢你的反馈"][visibleToUser=true]',
+          matches:
+            'View[childCount=1] > @View[childCount=3] > TextView[text="广告"][visibleToUser=true]',
+        },
+        {
+          preKeys: [11],
+          key: 12,
+          name: '关闭文章留言中的广告',
+          action: 'clickCenter',
+          matches: [
+            'View[childCount=2] > View[childCount=3] > TextView[text="广告"][visibleToUser=true]',
+            'View[childCount=2] > View[childCount=3] > @TextView[text="关闭此广告"][visibleToUser=true]',
+          ],
+        },
+        {
           preKeys: [0],
           key: 1,
           name: '点击「关闭此广告」',
@@ -539,7 +557,7 @@ export default defineGkdApp({
     {
       key: 24,
       name: '全屏广告-京东购物小程序弹窗',
-      desc: '关闭京东购物小程序的外卖优惠券、点餐成功优惠券和我的页面推广弹窗',
+      desc: '关闭京东购物小程序的外卖优惠券、下单成功优惠券、首页活动和我的页面推广弹窗',
       enable: false,
       activityIds: 'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
       rules: [
@@ -547,6 +565,7 @@ export default defineGkdApp({
           key: 0,
           name: '外卖优惠券及点餐成功弹窗',
           action: 'clickCenter',
+          excludeMatches: 'View[desc="不再接收弹窗"][visibleToUser=true]',
           matches:
             'View[desc="超级餐补券"] +n View[desc="开心收下"] +n @ImageView[visibleToUser=true][width>70][width<110][height>70][height<110][left>500][left<700]',
         },
@@ -558,6 +577,24 @@ export default defineGkdApp({
             'TextView[text="我的钱包"][visibleToUser=true]',
             'TextView[text="京东E卡"][visibleToUser=true]',
             'View[childCount=3] > Image[width>500] + @Image[visibleToUser=true][width<100][height<100] + TextView[text^="关闭"][visibleToUser=true]',
+          ],
+        },
+        {
+          key: 2,
+          name: '支付完成优惠券弹窗',
+          action: 'clickCenter',
+          matches: [
+            'View[desc="下单成功"][visibleToUser=true]',
+            '@ImageView[visibleToUser=true][width>70][width<100][height>70][height<100] + View[desc="不再接收弹窗"]',
+          ],
+        },
+        {
+          key: 3,
+          name: '首页限时商品弹窗',
+          action: 'clickCenter',
+          matches: [
+            'View[desc*="即将恢复原价"][visibleToUser=true]',
+            '@ImageView[visibleToUser=true][width>70][width<100][height>70][height<100] + ImageView[width>150] + View[desc="不再接收弹窗"]',
           ],
         },
       ],
