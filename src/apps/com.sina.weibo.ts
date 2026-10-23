@@ -13,5 +13,25 @@ export default defineGkdApp({
       rules:
         'FrameLayout[vid="vg_all"] > LinearLayout[vid="vg_bottom"] > FrameLayout > @ImageView[vid="bt_cancel"][clickable=true][visibleToUser=true]',
     },
+    {
+      key: 1,
+      name: '全屏广告-连续签到弹窗',
+      activityIds: 'com.sina.weibo.feed.MPDialogActivity',
+      rules: {
+        action: 'clickCenter',
+        matches: [
+          'TextView[text="点击签到"][visibleToUser=true]',
+          'View[childCount=4] > @TextView[text=""][index=3][width>100][width<180][height>100][height<180][visibleToUser=true]',
+        ],
+      },
+    },
+    {
+      key: 2,
+      name: '分段广告-评论区广告反馈',
+      activityIds: 'com.sina.weibo.feed.SubCommentActiity',
+      fastQuery: true,
+      rules:
+        'GridView[vid="blog_feedback_subitem"] > @TextView[text="对此内容不感兴趣"][clickable=true][visibleToUser=true]',
+    },
   ],
 });

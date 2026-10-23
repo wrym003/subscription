@@ -33,6 +33,14 @@ const uniqueAppIdsUP = new Set([
   'com.oplus.appdetail', // 一加系
 ]);
 
+const withJieMaoActivityExcluded = (disabledIds: Iterable<string>) => [
+  ...Array.from(disabledIds, (id) => ({ id, enable: false })),
+  {
+    id: 'com.hello.pet',
+    excludeActivityIds: 'com.mpaas.mriver.integration.MriverActivityBase$Main',
+  },
+];
+
 const COMMON_PREFIX =
   '[name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0]';
 
@@ -166,7 +174,7 @@ export default defineGkdGlobalGroups([
         excludeSnapshotUrls: OPEN_AD_EXCLUDE_SNAPSHOT_URLS,
       },
     ],
-    apps: diabledAppIds.map((id) => ({ id, enable: false })),
+    apps: withJieMaoActivityExcluded(diabledAppIds),
   },
   {
     key: 1,
@@ -310,7 +318,7 @@ export default defineGkdGlobalGroups([
         snapshotUrls: ['https://i.gkd.li/i/13632639'],
       },
     ],
-    apps: diabledAppIds.map((id) => ({ id, enable: false })),
+    apps: withJieMaoActivityExcluded(diabledAppIds),
   },
   {
     key: 2,
@@ -400,7 +408,7 @@ export default defineGkdGlobalGroups([
       },
     ],
     // 将 Set 转换为数组，并设置 enable 为 false
-    apps: diabledAppIds.map((id) => ({ id, enable: false })),
+    apps: withJieMaoActivityExcluded(diabledAppIds),
   },
   {
     key: 3,
@@ -459,7 +467,7 @@ export default defineGkdGlobalGroups([
       'https://i.gkd.li/i/19918547',
       'https://i.gkd.li/i/20033908',
     ],
-    apps: [...uniqueAppIdsUP].map((id) => ({ id, enable: false })),
+    apps: withJieMaoActivityExcluded(uniqueAppIdsUP),
   },
   {
     key: 4,
@@ -508,7 +516,7 @@ export default defineGkdGlobalGroups([
         ],
       },
     ],
-    apps: diabledAppIds.map((id) => ({ id, enable: false })),
+    apps: withJieMaoActivityExcluded(diabledAppIds),
   },
   {
     key: 5,
@@ -555,7 +563,7 @@ export default defineGkdGlobalGroups([
         ],
       },
     ],
-    apps: diabledAppIds.map((id) => ({ id, enable: false })),
+    apps: withJieMaoActivityExcluded(diabledAppIds),
   },
   {
     key: 6,
@@ -618,7 +626,7 @@ export default defineGkdGlobalGroups([
         ],
       },
     ],
-    apps: diabledAppIds.map((id) => ({ id, enable: false })),
+    apps: withJieMaoActivityExcluded(diabledAppIds),
   },
   {
     key: 7,
@@ -665,7 +673,7 @@ export default defineGkdGlobalGroups([
         ],
       },
     ],
-    apps: diabledAppIds.map((id) => ({ id, enable: false })),
+    apps: withJieMaoActivityExcluded(diabledAppIds),
   },
   {
     key: 8,
@@ -712,6 +720,6 @@ export default defineGkdGlobalGroups([
         ],
       },
     ],
-    apps: diabledAppIds.map((id) => ({ id, enable: false })),
+    apps: withJieMaoActivityExcluded(diabledAppIds),
   },
 ]);

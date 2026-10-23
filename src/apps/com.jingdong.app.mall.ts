@@ -184,6 +184,16 @@ export default defineGkdApp({
           matches:
             'TextView[text="开启消息通知"] <<2 ViewGroup[childCount=6] > @Button[desc="关闭"][clickable=true][visibleToUser=true]',
         },
+        {
+          key: 5,
+          name: '秒送外卖优惠券弹窗',
+          activityIds: 'com.jingdong.app.mall.MainFrameActivity',
+          fastQuery: true,
+          matches: [
+            'TextView[text="距结束"][visibleToUser=true]',
+            'TextView[text="开心收下"][visibleToUser=true] < @ViewGroup[clickable=true][visibleToUser=true]',
+          ],
+        },
       ],
     },
     {

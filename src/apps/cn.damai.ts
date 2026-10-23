@@ -28,5 +28,13 @@ export default defineGkdApp({
       rules:
         'ImageView[vid="homepage_popup_window_image"] + @FrameLayout[vid="homepage_popup_window_close_btn"][clickable=true]',
     },
+    {
+      key: 2,
+      name: '全屏广告-首页优惠券弹窗',
+      activityIds: '.homepage.MainActivity',
+      fastQuery: true,
+      rules:
+        'RelativeLayout[vid="new_person_dialog_top_container"] > @ImageView[vid="new_person_dialog_top_close_iv"][clickable=true][visibleToUser=true]',
+    },
   ],
 });
