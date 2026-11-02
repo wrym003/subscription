@@ -71,5 +71,17 @@ export default defineGkdApp({
       rules:
         'LinearLayout[vid="root_view"] > @Button[vid="recommend_close_activity"][clickable=true][visibleToUser=true]',
     },
+    {
+      key: 5,
+      name: '功能类-详情页底部关注卡片',
+      desc: '关闭微博详情页底部遮挡评论的关注卡片',
+      activityIds: 'com.sina.weibo.feed.detailrefactor.DetailPageActivity',
+      fastQuery: true,
+      matchRoot: true,
+      actionMaximum: 1,
+      resetMatch: 'match',
+      rules:
+        '[vid="btnFollow"][visibleToUser=true] < LinearLayout + @FrameLayout[vid="close_layout"][clickable=true][visibleToUser=true] > ImageView[vid="ivClose"][visibleToUser=true]',
+    },
   ],
 });

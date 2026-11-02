@@ -207,10 +207,11 @@ export default defineGkdApp({
       name: '全屏广告-双11开门红消费券弹窗',
       activityIds: 'com.taobao.tao.welcome.Welcome',
       fastQuery: true,
+      matchRoot: true,
       rules: {
         matches: [
           'TextView[text="张消费券共"][visibleToUser=true]',
-          '@ImageView[desc="关闭按钮"][clickable=true][visibleToUser=true] - FrameLayout[vid="poplayer_native_state_id"]',
+          '@ImageView[desc="关闭按钮"][clickable=true][visibleToUser=true] <<n FrameLayout[vid="poplayer_native_state_id"]',
         ],
       },
     },
