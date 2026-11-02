@@ -22,7 +22,8 @@ export default defineGkdApp({
         {
           key: 1,
           name: '点击右上角x按钮',
-          matches: 'TextView[text!="编辑"] + [vid="close_view"][childCount=0]',
+          matches:
+            'TextView[text!="编辑"] + [vid="close_view"][childCount=0][visibleToUser=true][width>0][height>0]',
           snapshotUrls: [
             'https://i.gkd.li/import/12707506',
             'https://i.gkd.li/import/12642094',
@@ -84,6 +85,30 @@ export default defineGkdApp({
             'https://i.gkd.li/i/19643262',
             'https://i.gkd.li/i/19534649',
             'https://i.gkd.li/i/20776872',
+          ],
+        },
+        {
+          key: 4,
+          name: '广告反馈菜单-点击不感兴趣',
+          activityIds: 'com.coolapk.market.view.node.DynamicNodePageActivity',
+          order: -4,
+          actionMaximum: 1,
+          resetMatch: 'match',
+          matches: [
+            'ListView[childCount=4] > LinearLayout[index=2] > LinearLayout > TextView[text="举报广告"][visibleToUser=true]',
+            'ListView[childCount=4] > @LinearLayout[index=0][clickable=true][visibleToUser=true] > LinearLayout > TextView[text="不感兴趣"][visibleToUser=true]',
+          ],
+        },
+        {
+          key: 5,
+          name: '评论区广告反馈菜单-点击不感兴趣',
+          activityIds: 'com.coolapk.market.view.feed.FeedDetailActivityV8',
+          order: -4,
+          actionMaximum: 1,
+          resetMatch: 'match',
+          matches: [
+            'ListView[childCount=4] > LinearLayout[index=2] > LinearLayout > TextView[text="举报广告"][visibleToUser=true]',
+            'ListView[childCount=4] > @LinearLayout[index=1][clickable=true][visibleToUser=true] > LinearLayout > TextView[text="不感兴趣"][visibleToUser=true]',
           ],
         },
       ],

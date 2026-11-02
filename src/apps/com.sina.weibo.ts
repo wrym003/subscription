@@ -41,12 +41,26 @@ export default defineGkdApp({
     {
       key: 3,
       name: '分段广告-评论区上方横幅广告',
-      desc: '关闭微博详情页评论区上方的穿山甲广告卡片',
+      desc: '关闭微博详情页评论区上方的横幅广告卡片',
       activityIds: 'com.sina.weibo.feed.detailrefactor.DetailPageActivity',
       fastQuery: true,
       matchRoot: true,
-      rules:
-        '@ImageView[clickable=true][visibleToUser=true][width<80][height<80] < FrameLayout - FrameLayout > FrameLayout > View[desc="来源穿山甲"]',
+      rules: [
+        {
+          key: 0,
+          matches:
+            'FrameLayout[childCount=4] > FrameLayout[index=2][childCount=1] > @ImageView[clickable=true][visibleToUser=true][width<80][height<80]',
+        },
+        {
+          key: 1,
+          actionMaximum: 1,
+          resetMatch: 'activity',
+          matches: [
+            'TextView[vid="title_title_left"][text="相关推荐"] < ViewGroup +2 RelativeLayout[childCount=2] > ViewGroup[clickable=true] > ViewGroup[childCount=2] > ImageView[index=0][width>800][height>180]',
+            'TextView[vid="title_title_left"][text="相关推荐"] +2 @FrameLayout[vid="title_dot_right"][clickable=true][visibleToUser=true]',
+          ],
+        },
+      ],
     },
     {
       key: 4,
