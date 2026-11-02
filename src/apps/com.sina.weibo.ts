@@ -81,7 +81,7 @@ export default defineGkdApp({
       actionMaximum: 1,
       resetMatch: 'match',
       rules:
-        '[vid="btnFollow"][visibleToUser=true] < LinearLayout + @FrameLayout[vid="close_layout"][clickable=true][visibleToUser=true] > ImageView[vid="ivClose"][visibleToUser=true]',
+        '@FrameLayout[vid="close_layout"][clickable=true][visibleToUser=true] > ImageView[vid="ivClose"][visibleToUser=true]',
     },
   ],
 });
