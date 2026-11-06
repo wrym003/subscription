@@ -60,6 +60,14 @@ export default defineGkdApp({
             'TextView[vid="title_title_left"][text="相关推荐"] +2 @FrameLayout[vid="title_dot_right"][clickable=true][visibleToUser=true]',
           ],
         },
+        {
+          key: 2,
+          name: '选择不想看到此类内容',
+          action: 'clickCenter',
+          // 快照 1793929024369：广告反馈弹窗的第二个可点击选项。
+          matches:
+            'FrameLayout[vid="bottomsheet"] > ScrollView > RelativeLayout > LinearLayout[vid="ll_container"] > @LinearLayout[clickable=true][visibleToUser=true] > LinearLayout > TextView[vid="tv_name"][text="不想看到此类内容"]',
+        },
       ],
     },
     {
