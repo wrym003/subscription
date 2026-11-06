@@ -86,7 +86,10 @@ export default defineGkdApp({
       activityIds: 'com.sina.weibo.feed.detailrefactor.DetailPageActivity',
       fastQuery: true,
       matchRoot: true,
-      actionMaximum: 1,
+      order: -5,
+      actionDelay: 500,
+      actionCd: 1500,
+      actionMaximum: 3,
       resetMatch: 'match',
       rules:
         '@FrameLayout[vid="close_layout"][clickable=true][visibleToUser=true] > ImageView[vid="ivClose"][visibleToUser=true]',
