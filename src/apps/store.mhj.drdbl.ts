@@ -9,7 +9,6 @@ export default defineGkdApp({
       name: '全屏广告-首页公告弹窗',
       desc: '关闭首页的公告弹窗',
       enable: false,
-      fastQuery: true,
       matchRoot: true,
       activityIds: 'o.BH',
       // 快照 1794063347678：公告内容容器后面的可点击图片是底部关闭按钮。
@@ -25,7 +24,6 @@ export default defineGkdApp({
       name: '全屏广告-首页优惠弹窗',
       desc: '关闭首页的全年底价优惠弹窗',
       enable: false,
-      fastQuery: true,
       matchRoot: true,
       activityIds: 'o.BH',
       // 快照 1794063359107：广告图片、两个领取按钮之后是底部关闭按钮。
@@ -37,7 +35,6 @@ export default defineGkdApp({
       name: '全屏广告-会员过期弹窗',
       desc: '点击会员过期弹窗中的忍痛放弃',
       enable: false,
-      fastQuery: true,
       matchRoot: true,
       activityIds: 'o.BH',
       // 快照 1794063365464：会员过期提示与“忍痛放弃”位于同一弹窗。

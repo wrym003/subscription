@@ -9,7 +9,6 @@ export default defineGkdApp({
       name: '全屏广告-首页弹窗',
       desc: '关闭首页的公告必读、应用中心和永久VIP活动弹窗',
       enable: false,
-      fastQuery: true,
       matchRoot: true,
       activityIds: 's.CH',
       rules: [

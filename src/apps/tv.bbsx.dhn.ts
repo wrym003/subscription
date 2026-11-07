@@ -22,7 +22,6 @@ export default defineGkdApp({
       name: '全屏广告-首页公告弹窗',
       desc: '关闭首页的公告必讀弹窗',
       enable: false,
-      fastQuery: true,
       matchRoot: true,
       activityIds: 'q.BY',
       // 快照 1794063534247：公告内容容器后面的可点击图片是底部关闭按钮。
@@ -38,7 +37,6 @@ export default defineGkdApp({
       name: '全屏广告-首页会员活动弹窗',
       desc: '关闭首页的永久会员活动弹窗',
       enable: false,
-      fastQuery: true,
       matchRoot: true,
       activityIds: 'q.BY',
       // 快照 1794063540304：广告图片和两个领取按钮之后是底部关闭按钮。

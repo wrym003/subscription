@@ -21,7 +21,6 @@ export default defineGkdApp({
       name: '全屏广告-首页弹窗',
       desc: '关闭首页的官方公告和活动推广弹窗',
       enable: false,
-      fastQuery: true,
       matchRoot: true,
       activityIds: 'p.BY',
       rules: [
