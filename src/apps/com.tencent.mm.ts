@@ -719,7 +719,7 @@ export default defineGkdApp({
     {
       key: 21,
       name: '分段广告-订阅号消息页面广告',
-      desc: '自动点击“x”',
+      desc: '关闭订阅号消息广告，并处理公众号列表中的广告反馈弹窗',
       enable: false,
       activityIds: [
         '.plugin.brandservice.ui.flutter.BizFlutterTLFlutterViewActivity',
@@ -782,6 +782,63 @@ export default defineGkdApp({
             'https://i.gkd.li/i/21792697',
             'https://i.gkd.li/i/22870535',
           ],
+        },
+        {
+          key: 20,
+          name: '公众号广告-展开广告菜单',
+          matchRoot: true,
+          matches:
+            'ScrollView > @View[desc="广告"][visibleToUser=true][height>500]',
+          excludeMatches: 'View[longClickable=true][width>500][height>1000]',
+          position: {
+            left: 'width * 0.89',
+            top: 'height * 0.07',
+          },
+        },
+        {
+          key: 21,
+          preKeys: 20,
+          name: '公众号广告-不感兴趣',
+          matchRoot: true,
+          actionDelay: 400,
+          matches: [
+            'View[desc="广告"][visibleToUser=true]',
+            '@View[longClickable=true][index=7][width>500][height>1000]',
+          ],
+          position: {
+            left: 'width * 0.53',
+            top: 'height * 0.2',
+          },
+        },
+        {
+          key: 22,
+          preKeys: 21,
+          name: '公众号广告-选择与我无关',
+          matchRoot: true,
+          actionDelay: 400,
+          matches: [
+            'View[desc="广告"][visibleToUser=true]',
+            '@View[longClickable=true][index=7][width>500][height>1000]',
+          ],
+          position: {
+            left: 'width * 0.18',
+            top: 'height * 0.2',
+          },
+        },
+        {
+          key: 23,
+          preKeys: 22,
+          name: '公众号广告-确定',
+          matchRoot: true,
+          actionDelay: 400,
+          matches: [
+            'View[desc="广告"][visibleToUser=true]',
+            '@View[longClickable=true][index=7][width>500][height>1000]',
+          ],
+          position: {
+            left: 'width * 0.85',
+            top: 'height * 0.08',
+          },
         },
       ],
     },
