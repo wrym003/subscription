@@ -38,7 +38,7 @@ export default defineGkdApp({
     {
       key: 2,
       name: '全屏广告-弹窗广告',
-      desc: '关闭登录后弹窗和体验会员提示弹窗',
+      desc: '关闭登录后弹窗、体验会员提示和首页会员活动弹窗',
       enable: false,
       rules: [
         {
@@ -65,8 +65,10 @@ export default defineGkdApp({
         {
           key: 2,
           fastQuery: true,
-          activityIds:
+          activityIds: [
             'cn.wps.moffice.plugin.cloudPage.newpage.NewCloudSettingNewActivity',
+            'cn.wps.moffice.main.local.HomeRootActivity',
+          ],
           matches: '[vid="cloud_popup_close_view"][clickable=true]',
           snapshotUrls: 'https://i.gkd.li/i/23786698',
         },
