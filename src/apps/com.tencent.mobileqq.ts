@@ -162,7 +162,7 @@ export default defineGkdApp({
     {
       key: 2,
       name: '分段广告-广告卡片菜单',
-      desc: '通过广告卡片菜单关闭好友动态、小世界评论区和钱包场景中的广告',
+      desc: '通过广告卡片菜单关闭好友动态、小世界评论区、频道和钱包场景中的广告',
       enable: false,
       rules: [
         {
@@ -197,10 +197,22 @@ export default defineGkdApp({
           matches: '[text="广告"][clickable=true]',
           snapshotUrls: 'https://i.gkd.li/i/30876372',
         },
+        {
+          key: 3,
+          name: '频道信息流-点击[广告]',
+          activityIds: '.activity.SplashActivity',
+          matchRoot: true,
+          fastQuery: true,
+          matches: [
+            '[vid="s7z"][text="频道"][visibleToUser=true]',
+            '@LinearLayout[vid="o1p"][clickable=true][visibleToUser=true] > TextView[vid="o1r"][text="广告"][visibleToUser=true]',
+          ],
+          excludeMatches: '[vid="8e"][visibleToUser=true]',
+        },
         // 第二段
         {
           key: 50,
-          preKeys: [0, 1, 2],
+          preKeys: [0, 1, 2, 3],
           name: '点击[关闭]此条广告',
           fastQuery: true,
           activityIds: [
