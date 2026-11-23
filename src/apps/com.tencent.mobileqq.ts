@@ -162,7 +162,7 @@ export default defineGkdApp({
     {
       key: 2,
       name: '分段广告-广告卡片菜单',
-      desc: '通过广告卡片菜单关闭好友动态、小世界评论区、频道和钱包场景中的广告',
+      desc: '通过广告卡片菜单关闭好友动态、小世界评论区和钱包场景中的广告',
       enable: false,
       rules: [
         {
@@ -173,10 +173,7 @@ export default defineGkdApp({
             'com.qzone.reborn.feedpro.activity.QzoneFriendFeedProActivity',
             '.guild.base.QPublicFragmentActivityForMainWebActivity',
             'com.qzone.reborn.base.QZoneShellActivity',
-            '.activity.SplashActivity', // 频道信息流
           ],
-          // 快照 1795401556250：频道信息流广告卡片的「广告 ∨」文字节点不可点击，
-          // 可点击的是其父 LinearLayout(1093,935,1214,986)，点击中心 1154,961。
           matches: '@[clickable=true] > [text="广告"][visibleToUser=true]',
           snapshotUrls: [
             'https://i.gkd.li/i/21947672',
