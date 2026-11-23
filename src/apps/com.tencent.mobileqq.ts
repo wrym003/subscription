@@ -46,9 +46,11 @@ export default defineGkdApp({
           key: 0,
           name: '消息页面顶部广告',
           activityIds: 'com.tencent.mobileqq.activity.SplashActivity',
+          matchRoot: true,
           matches:
             '[longClickable!=true][vid!="chat_item_head_icon"][desc=null&&text=null] <n *[left=0][vid!="root"][visibleToUser=true] >n TextView[clickable=false][text.length>0][!(text~="(?is).*([01]?[0-9]|2[0-3])[:：][0-5][0-9].*")][text!$="G"&&text!$="M"&&text!$="k"][visibleToUser=true] <<n * > [name$="ImageView"||name$="Button"][desc="关闭"||(desc=null&&text=null)][vid!="chat_item_head_icon"][childCount=0][visibleToUser=true][clickable=true][longClickable!=true][left>0]',
           excludeMatches: [
+            '[vid="s7z"][text="频道"][visibleToUser=true]',
             '[id^="com.tencent.mobileqq.qzone"]', // QQ空间
             '[text="互动标识"]', // 侧滑抽屉
             '[text="群标签"]', // 群资料
@@ -205,14 +207,38 @@ export default defineGkdApp({
           fastQuery: true,
           matches: [
             '[vid="s7z"][text="频道"][visibleToUser=true]',
-            '@LinearLayout[vid="o1p"][clickable=true][visibleToUser=true] > TextView[vid="o1r"][text="广告"][visibleToUser=true]',
+            '@LinearLayout[vid="o1p"][clickable=true][visibleToUser=true][left>=0][top>=0] > TextView[vid="o1r"][text="广告"][visibleToUser=true]',
           ],
           excludeMatches: '[vid="8e"][visibleToUser=true]',
+        },
+        {
+          key: 4,
+          name: '频道信息流-点击[关闭这条]',
+          activityIds: '.activity.SplashActivity',
+          order: -4, // 优先于全局「局部广告」(-3)
+          matchRoot: true,
+          fastQuery: true,
+          matches: [
+            '[vid="s7z"][text="频道"][visibleToUser=true]',
+            'LinearLayout[vid="8e"] >n @LinearLayout[vid="8l"][clickable=true][visibleToUser=true] > TextView[vid="8n"][text="关闭这条"]',
+          ],
+        },
+        {
+          key: 5,
+          name: '频道信息流-点击[直接关闭]',
+          activityIds: '.activity.SplashActivity',
+          order: -4,
+          matchRoot: true,
+          fastQuery: true,
+          matches: [
+            '[vid="s7z"][text="频道"][visibleToUser=true]',
+            'LinearLayout[vid="8e"] >n TextView[vid="8f"][text="直接关闭"][clickable=true][visibleToUser=true]',
+          ],
         },
         // 第二段
         {
           key: 50,
-          preKeys: [0, 1, 2, 3],
+          preKeys: [0, 1, 2],
           name: '点击[关闭]此条广告',
           fastQuery: true,
           activityIds: [
