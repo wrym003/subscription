@@ -43,61 +43,6 @@ export default defineGkdApp({
       desc: '关闭各页面局部广告，包括消息、聊天、联系人、好友动态等页面',
       rules: [
         {
-          key: 0,
-          name: '消息页面顶部广告',
-          activityIds: 'com.tencent.mobileqq.activity.SplashActivity',
-          matchRoot: true,
-          matches:
-            '[longClickable!=true][vid!="chat_item_head_icon"][desc=null&&text=null] <n *[left=0][vid!="root"][visibleToUser=true] >n TextView[clickable=false][text.length>0][!(text~="(?is).*([01]?[0-9]|2[0-3])[:：][0-5][0-9].*")][text!$="G"&&text!$="M"&&text!$="k"][visibleToUser=true] <<n * > [name$="ImageView"||name$="Button"][desc="关闭"||(desc=null&&text=null)][vid!="chat_item_head_icon"][childCount=0][visibleToUser=true][clickable=true][longClickable!=true][left>0]',
-          excludeMatches: [
-            '[vid="s7z"][text="频道"][visibleToUser=true]',
-            '[id^="com.tencent.mobileqq.qzone"]', // QQ空间
-            '[text="互动标识"]', // 侧滑抽屉
-            '[text="群标签"]', // 群资料
-            '[text="小程序"]', // 下拉小程序
-          ],
-          snapshotUrls: [
-            'https://i.gkd.li/import/13426912',
-            'https://i.gkd.li/import/12706907',
-            'https://i.gkd.li/import/13107298',
-            'https://i.gkd.li/import/12793359',
-            'https://i.gkd.li/import/12855048',
-            'https://i.gkd.li/import/13228108',
-            'https://i.gkd.li/import/12855441',
-            'https://i.gkd.li/import/13188722',
-            'https://i.gkd.li/import/13255493', //desc值为null快照
-            'https://i.gkd.li/import/13843140', //关系选择器为-2快照
-            'https://i.gkd.li/import/13931212',
-            'https://i.gkd.li/import/14178669',
-            'https://i.gkd.li/import/14178667',
-            'https://i.gkd.li/import/12892726',
-            'https://i.gkd.li/import/12774870',
-            'https://i.gkd.li/import/13207766',
-            'https://i.gkd.li/import/13386518',
-            'https://i.gkd.li/import/13476400',
-            'https://i.gkd.li/import/14155603',
-            'https://i.gkd.li/import/14217033',
-            'https://i.gkd.li/i/13255493',
-            'https://i.gkd.li/i/16323755',
-            'https://i.gkd.li/i/17529150',
-            'https://i.gkd.li/i/23837678',
-            'https://i.gkd.li/i/24230528',
-            'https://i.gkd.li/i/25235782',
-            'https://i.gkd.li/i/26159150',
-            'https://i.gkd.li/i/28426083',
-            'https://i.gkd.li/i/28425887',
-            'https://i.gkd.li/i/28425944',
-            'https://i.gkd.li/i/29140037',
-          ],
-          excludeSnapshotUrls: [
-            'https://i.gkd.li/i/14414585', //  误触
-            'https://i.gkd.li/i/15075866', // 误触
-            'https://i.gkd.li/i/15782476', // 误触
-            'https://i.gkd.li/i/15883390', // 误触
-            'https://i.gkd.li/i/24989508',
-          ],
-        },
-        {
           key: 1,
           name: '好友动态详情页广告',
           fastQuery: true,
